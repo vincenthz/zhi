@@ -1,0 +1,37 @@
+#!/bin/sh
+
+CEDICT_URL=http://www.mdbg.net/chindict/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz
+
+TABLE_SIMPTRAD_URL=https://raw.github.com/vincenthz/cantoinput/master/data/simp-trad.utf-8
+TABLE_TRADSIMP_URL=https://raw.github.com/vincenthz/cantoinput/master/data/trad-simp.utf-8
+TABLE_JYUTPING_URL=https://raw.github.com/vincenthz/cantoinput/master/data/input-jyutping.utf-8
+TABLE_YALE_URL=https://raw.github.com/vincenthz/cantoinput/master/data/input-yale.utf-8
+TABLE_PINYIN_URL=https://raw.github.com/vincenthz/cantoinput/master/data/input-pinyin.utf-8
+
+CONFIG_DIR=~/.config/zhi/
+
+mkdir -p ~/.config/zhi/
+
+if [ ! -f ${CONFIG_DIR}/dict_ce ]; then
+	wget $CEDICT_URL -O - | gunzip > ${CONFIG_DIR}/dict_ce
+fi
+
+if [ ! -f ${CONFIG_DIR}/table-jyutping ]; then
+	wget $TABLE_JYUTPING_URL -O ${CONFIG_DIR}/table-jyutping
+fi
+
+if [ ! -f ${CONFIG_DIR}/table-yale ]; then
+	wget $TABLE_YALE_URL -O ${CONFIG_DIR}/table-yale
+fi
+
+if [ ! -f ${CONFIG_DIR}/table-pinyin ]; then
+	wget $TABLE_PINYIN_URL -O ${CONFIG_DIR}/table-pinyin
+fi
+
+if [ ! -f ${CONFIG_DIR}/table-simptrad ]; then
+	wget $TABLE_SIMPTRAD_URL -O ${CONFIG_DIR}/table-simptrad
+fi
+
+if [ ! -f ${CONFIG_DIR}/table-tradsimp ]; then
+	wget $TABLE_TRADSIMP_URL -O ${CONFIG_DIR}/table-tradsimp
+fi

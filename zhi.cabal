@@ -1,0 +1,23 @@
+name:                zhi
+version:             0.0.0
+description:         Chinese tools / input for english speaker
+license:             BSD3
+license-file:        LICENSE
+copyright:           vincent hanquez <vincent@snarc.org>
+author:              vincent hanquez <vincent@snarc.org>
+maintainer:          vincent hanquez <vincent@snarc.org>
+synopsis:            Chinese tools / input for english speaker
+category:            Network
+stability:           Experimental
+build-type:          Simple
+cabal-version:       >=1.6
+homepage:            http://github.com/vincenthz/zhi
+data-files:          readme.md
+
+executable         zhi
+  main-is:         Zhi.hs
+  build-depends:   base >= 3 && < 5
+                 , bytestring
+                 , directory
+                 , vector
+                 , text
