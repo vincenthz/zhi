@@ -20,4 +20,5 @@ executable         zhi
                  , bytestring
                  , directory
                  , vector
+                 , containers
                  , text
