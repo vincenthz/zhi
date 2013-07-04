@@ -12,7 +12,7 @@ stability:           Experimental
 build-type:          Simple
 cabal-version:       >=1.6
 homepage:            http://github.com/vincenthz/zhi
-data-files:          readme.md
+data-files:          README.md
 
 executable         zhi
   main-is:         Zhi.hs
