@@ -52,6 +52,7 @@ pinyinPrefixTree   = zhiRomanizationPath "pinyin" >>= readInputFileToTree
 juytpingPrefixTree = zhiRomanizationPath "juytping" >>= readInputFileToTree
 yalePrefixTree     = zhiRomanizationPath "yale" >>= readInputFileToTree
 
+searchAndPrint :: Bool -> PTree.PTree [String] -> String -> IO ()
 searchAndPrint printDescendant tree arg = do
 	let indexer = either error id $ PTree.indexerFromString arg
 	let (p', c) = PTree.lookupPrefix1 indexer tree
